@@ -45,17 +45,19 @@ class FamilyStructure:
         "lucky_numbers" : lucky_numbers
         }
         self._members.append(new_member)
-        return "New member added", 200
+        return "New member added"
 
     def delete_member(self, id):
-        for x in self._members:
-            if x['id']==id:
-                self._members.remove(x)
-        return  self._members
-
-    def get_member(self, id):
         # fill this method and update the return
-        pass
+        for x in self._members:
+            if x['id']==int(id):
+                self._members.remove(x)
+        return self._members
+   
+    def get_member(self, id):
+        for x in self._members:
+            if x["id"]==int(id):
+                return x
 
     # this method is done, it returns a list with all the family members
     def get_all_members(self):
