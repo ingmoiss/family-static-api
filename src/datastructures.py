@@ -48,8 +48,10 @@ class FamilyStructure:
         return "New member added", 200
 
     def delete_member(self, id):
-        # fill this method and update the return
-        pass
+        for x in self._members:
+            if x['id']==id:
+                self._members.remove(x)
+        return  self._members
 
     def get_member(self, id):
         # fill this method and update the return
